@@ -45,11 +45,10 @@ class ListFragment : Fragment() {
 
      init()
 
-        val observer= Observer<NewsModel>{ data->
-
-            var array= data.articles as List<ArticlesItem>
-            this.adapter=NewsAdapter(array,view.context)
-            binding.newsActivityList.adapter =this.adapter
+        val observer= Observer<List<ArticlesItem>>{ data->
+            
+             this.adapter=NewsAdapter(data,view.context)
+             binding.newsActivityList.adapter =this.adapter
 
         }
 
