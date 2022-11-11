@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.clean_digicala.bingsearch.data.entity.ArticlesItem
 import com.example.clean_digicala.bingsearch.data.entity.BingNewsEntity
 import com.example.clean_digicala.bingsearch.domain.model.NewsModel
 import com.example.clean_digicala.bingsearch.domain.usecase.GetNewsList
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 class NewsViewModel( private var getNewsList: GetNewsList):ViewModel() {
 
 
-    var data= MutableLiveData<NewsModel>()
+    var data= MutableLiveData<List<ArticlesItem>>()
 
 
     fun getNews(){
@@ -21,7 +22,8 @@ class NewsViewModel( private var getNewsList: GetNewsList):ViewModel() {
        viewModelScope.launch(Dispatchers.IO) {
 
 
-          data.postValue(getNewsList.getNews())
+          val array= getNewsList.getNews().articles as List<ArticlesItem>
+          data.postValue(array)
 
 
        }
