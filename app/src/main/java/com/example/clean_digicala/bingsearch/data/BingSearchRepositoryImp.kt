@@ -9,26 +9,43 @@ import com.example.clean_digicala.bingsearch.domain.BingSearchRepository
 class BingSearchRepositoryImp(private var dataSource:SearchNewsDataSourceImpl): BingSearchRepository {
 
 
+   private lateinit var articles:List<ArticlesItem>
+   private var data:BingNewsEntity?=BingNewsEntity()
 
-    override suspend fun getNews():BingNewsEntity {
 
-        var articles= dataSource.getNews()?.articles as List<ArticlesItem>
-        var data= dataSource.getNews()
 
-        articles.map {
+    override suspend fun getNews(searchQuery: String):BingNewsEntity? {
 
-            if(it.author!=null) {
-                it.author = "Written by " + it.author
-            }else{
-                it.author="unknown"
+        if(dataSource.getNews(searchQuery)!=null) {
+
+
+            articles = dataSource.getNews(searchQuery)?.articles as List<ArticlesItem>
+             data = dataSource.getNews(searchQuery)
+
+
+
+            articles.map {
+
+                if (it.author != null) {
+                    it.author = "Written by " + it.author
+                } else {
+                    it.author = "unknown"
+                }
+
             }
+
+
+
+            data?.articles = articles
 
         }
 
-        data?.articles=articles
-
-
-    return data!!
+    return data
 
     }
+
+
+
+
+
 }
