@@ -27,16 +27,21 @@ class NewsAdapter(private val data:List<ArticlesItem>,private var context:Contex
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 
-        holder.txt_title?.text  = data[position].title
-        holder.txt_publish?.text=data[position].author
 
-        holder.layout?.setOnClickListener(View.OnClickListener {
 
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(data[position].url)
-            context.startActivity(intent)
+            holder.txt_title?.text = data[position].title
+            holder.txt_publish?.text = data[position].author
 
-        })
+            holder.layout?.setOnClickListener(View.OnClickListener {
+
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(data[position].url)
+                context.startActivity(intent)
+
+            })
+
+
+
 
     }
 
