@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.clean_digicala.R
@@ -54,7 +55,19 @@ class ListFragment : Fragment() {
 
         viewModel.data.observe(viewLifecycleOwner,observer)
 
-        viewModel.getNews()
+
+
+        binding.newsFragmentEtSearch.doOnTextChanged { text, start, before, count ->
+
+            viewModel.getNews(text.toString())
+
+        }
+
+
+
+
+
+
 
 
 
@@ -66,6 +79,7 @@ class ListFragment : Fragment() {
     private fun init(){
 
          binding.newsActivityList.setLayoutManager(LinearLayoutManager(context));
+
 
     }
 
