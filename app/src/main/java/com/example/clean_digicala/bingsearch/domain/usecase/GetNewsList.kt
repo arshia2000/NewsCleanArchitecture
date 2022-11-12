@@ -10,10 +10,10 @@ class GetNewsList(private var repository:BingSearchRepositoryImp) {
 
 
 
-    suspend fun getNews():NewsModel{
+    suspend fun getNews(searchQuery:String):NewsModel?{
 
 
-       return repository.getNews().toModel()
+       return repository.getNews(searchQuery)?.toModel()
 
     }
 }
