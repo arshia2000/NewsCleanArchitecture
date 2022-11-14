@@ -48,7 +48,7 @@ class ListFragment : Fragment() {
 
         val observer= Observer<List<ArticlesItem>>{ data->
 
-            this.adapter=NewsAdapter(data,view.context)
+            this.adapter=NewsAdapter(data,view.context,view)
              binding.newsActivityList.adapter =this.adapter
 
         }
