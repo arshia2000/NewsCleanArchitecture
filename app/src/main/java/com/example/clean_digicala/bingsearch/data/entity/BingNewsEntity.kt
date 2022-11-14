@@ -1,7 +1,10 @@
 package com.example.clean_digicala.bingsearch.data.entity
 
+import android.os.Parcelable
 import com.example.clean_digicala.bingsearch.domain.model.NewsModel
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+
 
 data class BingNewsEntity(
 
@@ -26,6 +29,8 @@ data class BingNewsEntity(
 
 }
 
+
+@Parcelize
 data class Source(
 
     @field:SerializedName("Id")
@@ -33,8 +38,10 @@ data class Source(
 
     @field:SerializedName("Name")
     val name: String? = null
-)
+) : Parcelable
 
+
+@Parcelize
 data class ArticlesItem(
 
     @field:SerializedName("publishedAt")
@@ -43,6 +50,12 @@ data class ArticlesItem(
     @field:SerializedName("author")
     var author: String? = null,
 
+    @field:SerializedName("urlToImage")
+    val urlToImage: String? = null,
+
+    @field:SerializedName("description")
+    val description: String? = null,
+
     @field:SerializedName("source")
     val source: Source? = null,
 
@@ -50,5 +63,10 @@ data class ArticlesItem(
     val title: String? = null,
 
     @field:SerializedName("url")
-    val url: String? = null
-)
+    val url: String? = null,
+
+    @field:SerializedName("content")
+    val content: String? = null
+
+
+) : Parcelable
