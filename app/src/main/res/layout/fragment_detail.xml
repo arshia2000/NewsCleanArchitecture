@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bingsearch.presenter.DetailFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/detail_fragment_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_fragment_img"
+            android:layout_marginStart="10dp"
+            android:textAlignment="gravity"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="title"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/detail_fragment_img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
+            android:textSize="12sp" />
+
+
+    <TextView
+        android:id="@+id/detail_fragment_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_fragment_title"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="author"
+        android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/detail_fragment_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_fragment_author"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="detail"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/detail_fragment_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_fragment_date"
+            android:gravity="start"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="description"
+            android:textSize="20sp"
+            ></TextView>
+
+
+        <Button
+            android:id="@+id/fragment_detail_btn"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/detail_fragment_description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:text="see Article"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp">
+
+        </Button>
+
+
+    </RelativeLayout>
+
+
+
+</ScrollView>
