@@ -8,5 +8,18 @@
         android:id="@+id/listFragment2"
         android:name="com.example.clean_digicala.bingsearch.presenter.ListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment2_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.clean_digicala.bingsearch.presenter.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="Article"
+            app:argType="com.example.clean_digicala.bingsearch.data.entity.ArticlesItem" />
+    </fragment>
 </navigation>
