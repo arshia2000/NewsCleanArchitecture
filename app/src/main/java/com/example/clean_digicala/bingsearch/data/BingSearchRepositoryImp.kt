@@ -28,9 +28,13 @@ class BingSearchRepositoryImp(private var dataSource:SearchNewsDataSourceImpl): 
 
                 if (it.author != null) {
                     it.author = "Written by " + it.author
+                    it.publishedAt=it.publishedAt?.substring(0,10).toString()
+                    it.publishedAt=it.publishedAt?.replace("-","/")
                 } else {
                     it.author = "unknown"
                 }
+
+
 
             }
 
