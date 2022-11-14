@@ -12,6 +12,7 @@ class NewsViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
     var txt_publish: TextView?=null
     var layout:ConstraintLayout?=null
 
+
     init {
 
         txt_title=itemView.findViewById(R.id.custom_txt_title)
