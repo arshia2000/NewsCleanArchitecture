@@ -14,6 +14,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 import java.lang.Exception
+import java.lang.String.format
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 class SearchNewsDataSourceImpl:SearchNewsDataSource {
@@ -21,9 +26,6 @@ class SearchNewsDataSourceImpl:SearchNewsDataSource {
 
 
     private val BASE_URL = "https://newsapi.org"
-
-
-
 
 
 
@@ -48,9 +50,13 @@ class SearchNewsDataSourceImpl:SearchNewsDataSource {
 
 
 
-
-
     override suspend fun getNews(searchQuery:String): BingNewsEntity?= withContext(Dispatchers.IO) {
+
+
+
+//        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+//        val current = LocalDateTime.now().format(formatter)
+//        Log.e("date : ",current)
 
 
         try {
@@ -60,9 +66,6 @@ class SearchNewsDataSourceImpl:SearchNewsDataSource {
             Log.e("retrofit call : ",ex.message.toString())
             null
         }
-
-
-
 
 
     }
