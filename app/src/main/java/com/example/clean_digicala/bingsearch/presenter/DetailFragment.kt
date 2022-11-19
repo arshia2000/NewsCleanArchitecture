@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.navigation.fragment.findNavController
 import com.example.clean_digicala.R
 import com.example.clean_digicala.bingsearch.data.entity.ArticlesItem
 import com.example.clean_digicala.databinding.FragmentDetailBinding
@@ -66,10 +67,11 @@ class DetailFragment : Fragment() {
         binding.fragmentDetailBtn.setOnClickListener(View.OnClickListener {
 
 
-            val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse(data.url)
-               startActivity(intent)
+//            val intent = Intent(Intent.ACTION_VIEW)
+//                intent.data = Uri.parse(data.url)
+//               startActivity(intent)
 
+            findNavController().navigate(DetailFragmentDirections.actionDetailFragmentToWebViewFragment(data.url.toString()))
 
 
         })
