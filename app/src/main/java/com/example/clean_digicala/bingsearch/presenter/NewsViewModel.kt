@@ -21,9 +21,11 @@ class NewsViewModel( private var getNewsList: GetNewsList):ViewModel() {
        viewModelScope.launch(Dispatchers.IO) {
 
 
-          val array= getNewsList.getNews(searchQuery)?.articles as List<ArticlesItem>
-          data.postValue(array)
+           if(getNewsList.getNews(searchQuery)?.articles!=null) {
+               val array = getNewsList.getNews(searchQuery)?.articles as List<ArticlesItem>
+               data.postValue(array)
 
+           }
 
 
 
